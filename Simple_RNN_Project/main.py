@@ -18,9 +18,19 @@ def preprocessed_text(text):
     padded_review = pad_sequences([encoded_review],maxlen = 500)
     return padded_review
 
-def final_prediction(review):
-    preprocessedtext = preprocessed_text(review)
-    prediction = model.predict(preprocessedtext)
+
+st.title('Sentiment analysis of Movie Review')
+st.write('Enter the movie review')
+
+user_input = st.text_area('Movie Review')
+
+if st.button('Classify'):
+    preprocessed_input = preprocessed_text(user_input)
+    prediction = model.predict(preprocessed_input)
     
     sentiment = 'Positive' if prediction[0][0] > 0.5 else 'Negative'
-    return sentiment, prediction[0][0]
+
+    st.write(f'Sentiment: {sentiment}')
+    st.write(f'Prediction: {prediction[0][0]}')
+else:
+    st.write('Please enter a movie review')
