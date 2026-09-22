@@ -1,0 +1,18 @@
+[project]
+name = "lstm-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.11.2",
+    "nltk>=3.10.3",
+    "numpy>=2.4.6",
+    "pandas>=3.0.6",
+    "scikeras>=0.13.0",
+    "scikit-learn>=1.9.1",
+    "streamlit>=1.64.0",
+    "tensorboard>=2.21.0",
+    "tensorflow>=2.21.0",
+]
